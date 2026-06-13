@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
 import { SymbolView } from 'expo-symbols';
+import { useState } from 'react';
 import { Platform, Pressable, ScrollView, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -12,6 +13,8 @@ import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
 export default function TabTwoScreen() {
+  const [message,setMessage]=
+  useState("Welcome")
   const safeAreaInsets = useSafeAreaInsets();
   const insets = {
     ...safeAreaInsets,
@@ -71,10 +74,23 @@ export default function TabTwoScreen() {
                 <ThemedText type="small">
                   College : B.Tech 3rd Year
                 </ThemedText>
-            <ExternalLink href="https://docs.expo.dev/router/introduction">
-              <ThemedText type="linkPrimary">Learn more</ThemedText>
-            </ExternalLink>
-          </Collapsible>
+                
+                <ThemedText type="small">
+                  {message}
+                </ThemedText>
+
+
+                <Pressable onPress={() => setMessage("Mission 2 Started")}>
+                  <ThemedText type="link">
+                    Change Message
+                  </ThemedText>
+                </Pressable>
+
+
+          
+               </Collapsible>
+          
+
 
           <Collapsible title="Android, iOS, and web support">
             <ThemedView type="backgroundElement" style={styles.collapsibleContent}>
