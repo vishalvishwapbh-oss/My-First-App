@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { SymbolView } from 'expo-symbols';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Platform, Pressable, ScrollView, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -15,6 +15,19 @@ import { useTheme } from '@/hooks/use-theme';
 export default function TabTwoScreen() {
   const [message,setMessage]=
   useState("Welcome")
+  const[data,setData]=
+  useState("loading..");
+  const[userData , setUserData]=
+  useState<any>(null);
+
+useEffect(() => {
+  fetch("https://jsonplaceholder.typicode.com/users/1")
+    .then(response => response.json())
+    .then(json => {
+      setUserData(json);
+      setData("")
+    });
+}, []);
   const safeAreaInsets = useSafeAreaInsets();
   const insets = {
     ...safeAreaInsets,
@@ -78,6 +91,16 @@ export default function TabTwoScreen() {
                 <ThemedText type="small">
                   {message}
                 </ThemedText>
+                <ThemedText type ="small">
+                  {data}
+                </ThemedText>
+                <ThemedText type="small">
+                  User: {userData?.name}
+                </ThemedText>
+                <ThemedText type="small">
+                Email:{userData?.email}
+                </ThemedText>
+
 
 
                 <Pressable onPress={() => setMessage("Mission 2 Started")}>
