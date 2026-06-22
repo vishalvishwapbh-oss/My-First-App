@@ -5,7 +5,8 @@ export default function DetailsScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Internship Details</Text>
 
-<Text>Name : Vishal</Text>
+<Text>Name : Vishal Vishwakarma</Text>
+<Text>I am From Pratapgarh</Text>
 <Text>Internship : VertexMind</Text>
 <Text>Domain : App Development</Text>
 <Text>Learning : React Native</Text>
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 10,
   },

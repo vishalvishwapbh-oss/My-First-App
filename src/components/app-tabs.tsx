@@ -27,8 +27,21 @@ export default function AppTabs() {
           renderingMode="template"
         />
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="details">
-  <NativeTabs.Trigger.Label>Details</NativeTabs.Trigger.Label>
+    
+<NativeTabs.Trigger name= "details">
+  <NativeTabs.Trigger.Label>Details</
+  NativeTabs.Trigger.Label>
+</NativeTabs.Trigger>
+<NativeTabs.Trigger name="tasks">
+  <NativeTabs.Trigger.Label>Tasks</NativeTabs.Trigger.Label>
+</NativeTabs.Trigger>
+
+<NativeTabs.Trigger name="settings">
+  <NativeTabs.Trigger.Label>Settings</NativeTabs.Trigger.Label>
+</NativeTabs.Trigger>
+
+<NativeTabs.Trigger name="addtask">
+  <NativeTabs.Trigger.Label>Add Task</NativeTabs.Trigger.Label>
 </NativeTabs.Trigger>
     </NativeTabs>
   );
